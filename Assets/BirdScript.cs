@@ -18,6 +18,10 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (myRigidBody.position.y < -12 || myRigidBody.position.y > 12)
+        {
+            logic.gameOver();
+        }
         if (Input.GetKeyDown(KeyCode.Space) && birdIsAlive) {
             myRigidBody.velocity = Vector2.up * flapStrength;
         }
